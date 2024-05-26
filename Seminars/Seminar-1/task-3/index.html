@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="canBy=!canBy">Мне исполнилось 14 лет</button>
+        <p v-show="canBy">Можете заказать товар</p>
+        <button  @click="cantBy=!cantBy">Мне еще нет 14 лет</button>
+        <p v-show="cantBy">Доступ закрыт</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    canBy: false,
+                    cantBy: false,
+                }
+            },
+            methods: {
+                
+            },
+        }
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>

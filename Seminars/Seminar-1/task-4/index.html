@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animations {
+            animation: vision 1s ease-in-out;
+        }
+        @keyframes vision {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show=!show">Показать еще</button>
+        <p v-show="show" class="animations">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore deserunt
+        consectetur quidem eius consequatur commodi quam natus. Modi fugiat sed adipisci 
+        architecto tenetur aut impedit ut sit debitis excepturi.</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    show: false,
+                }
+            },
+            methods: {
+                
+            },
+        }
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>

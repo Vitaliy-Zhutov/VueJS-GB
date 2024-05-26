@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="random">Генерировать случайное число</button>
+        <p>{{randomNumber}}</p>
+        <p v-if="randomNumber < 5">Число меньше 5</p>
+        <p v-else-if="randomNumber >= 5 && randomNumber < 10">Число от 5 до 9</p>
+        <p v-else>Число равно 10</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    randomNumber: 0,
+                }
+            },
+            methods: {
+                random() {
+                    this.randomNumber = Math.floor(Math.random() * 10 + 1)
+                }
+            },
+        }
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>
