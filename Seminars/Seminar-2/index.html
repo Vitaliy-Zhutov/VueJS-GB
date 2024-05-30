@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="product">
+            <h2>{{product.title}}</h2>
+            <p>{{product.price}}</p>
+            <img width="300" :src="product.image" alt="#">
+            <button @click="addDiscount" :disabled="isDisabled">Скидка</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    isDisabled: false,
+                    product: {
+                        title: "Товар",
+                        price: 1000,
+                        image: 'https://sun9-48.userapi.com/impf/36h1ppEExSPsUexOd0LPmxeEYj7VJl9dmceaQg/bhTZX45kAWw.jpg?size=604x483&quality=96&sign=8287746fc180cfe25afd58e11e104031&c_uniq_tag=Esbg0mTffgCX90Q6efydOqDLumhD8AZdfPmI6v52gUU&type=album',
+                    },
+                };
+            },
+            methods: {
+                addDiscount() {
+                    const discount = Math.floor(Math.random()*20 + 1);
+                    this.product.price = this.product.price - (this.product.price * discount / 100);
+                    this.isDisabled = true;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>

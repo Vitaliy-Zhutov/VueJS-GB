@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div div id="app">
+        <ul>
+            <li v-for="item in items" :key="item.id">
+                <input v-model.lazy="item.amount" type="number" step="1">
+                <label>
+                    <input type="checkbox"> {{ item.name }}
+                </label>
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    items: [
+                        {
+                            id: 1,
+                            name: "Молоко",
+                            amount: 5,
+                        },
+                        {
+                            id: 1,
+                            name: "Хлеб",
+                            amount: 2,
+                        },
+                        {
+                            id: 1,
+                            name: "Яблоки",
+                            amount: 8,
+                        },
+                        {
+                            id: 1,
+                            name: "Мясо",
+                            amount: 3,
+                        }
+                    ]
+                };
+            },
+            methods: {
+
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

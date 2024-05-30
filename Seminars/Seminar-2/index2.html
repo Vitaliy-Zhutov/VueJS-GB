@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div div id="app">
+        <ul>
+            <li v-for="user in users" :key="user.id">{{user.name}} - {{user.age}}</li>
+        </ul>
+    </div>
+    
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    users: [
+                        {
+                            id: 1,
+                            name: "Alex",
+                            age: 18,
+                        },
+                        {
+                            id: 2,
+                            name: "Max",
+                            age: 19,
+                        },
+                        {
+                            id: 3,
+                            name: "Fox",
+                            age: 20,
+                        },
+                    ],
+                };
+            },
+            methods: {
+
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>
